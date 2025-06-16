@@ -1,0 +1,153 @@
+/* General Layout */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f8fb;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+h1,
+h2 {
+    font-weight: 600;
+}
+
+/* Navbar */
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar-logo {
+    height: 40px;
+    width: auto;
+}
+
+body.dark-mode .navbar,
+body.dark-mode .bg-dark {
+    background-color: #1f1f1f !important;
+}
+
+.lead {
+    font-size: 100px;
+}
+
+/* Theme Toggle Icon */
+.theme-toggle-icon {
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    /*filter: invert(100%);*/
+    transition: filter 0.3s ease;
+
+}
+
+body.dark-mode .theme-toggle-icon {
+    filter: invert(0%);
+}
+
+/* Hero Section */
+#hero-container {
+    padding: 0;
+    margin-top: -1rem;
+}
+
+#hero {
+    padding: 60px 20px;
+    background: linear-gradient(to right, #00aeef, #0077c8);
+    color: white;
+    text-align: center;
+    margin-bottom: 100px;
+    border-radius: 0;
+}
+
+#hero img {
+    max-width: 250px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+/* About Section */
+#about {
+    padding: 60px 20px;
+    background-color: #f4f8fb;
+    border-radius: 10px;
+    margin-bottom: 100px;
+    transition: background-color 0.3s ease;
+}
+
+body.dark-mode #about {
+    background-color: #121212;
+}
+
+/* Contact Section */
+#contact {
+    padding: 60px 20px;
+    background-color: #e6ecf2;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+body.dark-mode #contact {
+    background-color: #2a2a2a;
+}
+
+/* Form Elements */
+form .form-control {
+    border-radius: 6px;
+    box-shadow: none;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #000;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode form .form-control {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+/* Footer */
+footer {}
+
+body.dark-mode footer {
+    background-color: #1f1f1f;
+    color: #ccc;
+}
+
+/* Buttons */
+.btn {
+    padding: 0.6rem 1.5rem;
+    border-radius: 4px;
+}
+
+/* Custom Identifiers */
+#txtName,
+#txtEmail,
+#txtMessage {
+    background-color: #fff;
+}
+
+body.dark-mode #txtName,
+body.dark-mode #txtEmail,
+body.dark-mode #txtMessage {
+    background-color: #333;
+    color: #fff;
+}
+
+.btn-primary {
+    background-color: #0077c8;
+    border-color: #0077c8;
+}
+
+.btn-primary:hover {
+    background-color: #005fa3;
+    border-color: #005fa3;
+}
