@@ -14,7 +14,7 @@ body {
 }
 
 body.dark-mode {
-    background-color: #121212;
+    background-color: #2a2a2a;
     color: #e0e0e0;
 }
 
@@ -46,7 +46,7 @@ h2 {
 
 body.dark-mode .navbar,
 body.dark-mode .bg-dark {
-    background-color: #1f1f1f !important;
+    background-color: #2a2a2a !important;
 }
 
 .lead {
@@ -102,14 +102,14 @@ body.dark-mode .theme-toggle-icon {
 }
 
 body.dark-mode #about {
-    background-color: #121212;
+    background-color: #2a2a2a;
 }
 
 /* Contact Section */
 #contact {
     padding: 60px 20px;
     background-color: #e6ecf2;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     transition: background-color 0.3s ease;
 }
 
@@ -123,7 +123,7 @@ form .form-control {
     box-shadow: none;
     border: 1px solid #ccc;
     background-color: #fff;
-    color: #000;
+    color: #1f1f1f;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -257,6 +257,9 @@ body.dark-mode .btn-primary:hover {
     border-color: #005fa3;
 }
 
+body.dark-mode {
+    background: #2a2a2a;
+}
 
 @media (max-width: 576px) {
     .card-img-top {
