@@ -10,6 +10,30 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.container,
+.container-fluid,
+section,
+.card,
+.card-body,
+.navbar,
+footer,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+#about,
+#about-container,
+#contact,
+#contact-container,
+#services,
+#services-container {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
 h1,
 h2 {
     font-weight: 600;
