@@ -149,6 +149,38 @@
   <!-- Dynamic Services Injection -->
   <script type="module" src="main.js"></script>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.querySelector("#contact form");
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById("txtName").value;
+        const email = document.getElementById("txtEmail").value;
+        const message = document.getElementById("txtMessage").value;
+
+        try {
+          const response = await fetch(`${window.location.origin}/api/contact`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, email, message })
+          });
+
+          if (response.ok) {
+            alert("✅ Your message was sent!");
+            form.reset();
+          } else {
+            alert("❌ Failed to send message.");
+          }
+        } catch (err) {
+          console.error("Error:", err);
+          alert("❌ Server error. Please try again later.");
+        }
+      });
+    });
+  </script>
+
+
 </body>
 
 </html>

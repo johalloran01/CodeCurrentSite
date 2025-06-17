@@ -1,49 +1,71 @@
-// server.js
-
 const express = require('express');
-const bodyParser = require('body-parser');
 const cors = require('cors');
-require('dotenv').config(); // Loads environment variables from .env
+const bodyParser = require('body-parser');
+const axios = require('axios');
+const path = require('path');
+require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 4000;
 
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
 
-// Test route
-app.get('/', (req, res) => {
-  res.send('Server is running...');
-});
+// Serve static files (media, index.html, style.css, etc.)
+app.use(express.static(path.join(__dirname, '..')));
 
-// Contact form route (to be used with Brevo)
+// Contact form endpoint
 app.post('/api/contact', async (req, res) => {
-  const { name, email, message } = req.body;
+    const { name, email, message } = req.body;
 
-  try {
-    const axios = require('axios');
+    const data = {
+        sender: {
+            name: "Code Current Contact Form",
+            email: process.env.VERIFIED_EMAIL
+        },
+        replyTo: {
+            email,
+            name
+        },
+        to: [{ email: process.env.RECEIVER_EMAIL, name: "Josh" }],
+        subject: "📩 New Contact Form Submission",
+        htmlContent: `
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Message:</strong></p>
+            <p>${message}</p>
+        `,
+        tags: ["contact-form"]
+    };
 
-    const response = await axios.post('https://api.brevo.com/v3/smtp/email', {
-      sender: { name, email },
-      to: [{ email: process.env.RECEIVER_EMAIL }],
-      subject: `New message from ${name}`,
-      htmlContent: `<p>${message}</p>`
-    }, {
-      headers: {
-        'api-key': process.env.BREVO_API_KEY,
-        'Content-Type': 'application/json',
-        'accept': 'application/json'
-      }
-    });
+    try {
+        const response = await axios.post('https://api.brevo.com/v3/smtp/email', data, {
+            headers: {
+                'api-key': process.env.BREVO_API_KEY,
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        });
 
-    res.status(200).json({ success: true, message: 'Email sent!' });
-  } catch (error) {
-    console.error('Email error:', error.response?.data || error.message);
-    res.status(500).json({ success: false, message: 'Failed to send email.' });
-  }
+        console.log("✅ Email sent:", response.data);
+        res.status(200).json({ success: true });
+    } catch (error) {
+        console.error("❌ Brevo error:", error.response?.data || error.message);
+        res.status(500).json({ error: "Failed to send email." });
+    }
 });
 
+
+// Fallback: always serve index.html for any GET route (for SPA or direct access)
+const indexPath = path.resolve(__dirname, '..', 'index.html');
+app.get(/^\/(?!api).*/, (req, res) => {
+    res.sendFile(indexPath);
+});
+
+
+
+// Start server
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`🚀 Server running at http://localhost:${PORT}`);
 });
