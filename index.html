@@ -20,7 +20,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto override-margin">
                     <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
@@ -34,22 +34,26 @@
     </header>
 
     <main class="text-center">
-        <div class="container-fluid" id="hero-container">
-            <section id="hero">
+        <div class="container-fluid section-white no-gutter" id="hero-container">
+            <section id="hero" class="section-padding">
                 <p class="lead">Modern development in a constant state of flow.</p>
             </section>
         </div>
 
-        <div class="container-fluid" id="about-container">
-            <section id="about">
-                <h2>About Us</h2>
-                <p>Code Current is a developer-focused studio embracing flow, function, and the future of technology.
+        <div class="container-fluid section-white no-gutter" id="about-container">
+            <section id="about" class="section-padding">
+                <p class="about">Code Current is a client focused studio embracing flow, function, and the future of
+                    technology.
+                    We utilize our exceptional skill sets, that encorporate a wide variety of tools and resources to
+                    architect the solution that's right for you.
                 </p>
             </section>
         </div>
 
-        <div class="container-fluid" id="contact-container">
-            <section id="contact">
+        <!-- Services section dynamically injected via main.js -->
+
+        <div class="container-fluid section-white no-gutter" id="contact-container">
+            <section id="contact" class="section-padding">
                 <h2>Contact Us</h2>
                 <form>
                     <div class="mb-3">
@@ -88,9 +92,9 @@
             updateThemeIcon();
         });
 
-        // Set correct icon on load
         updateThemeIcon();
     </script>
+    <script type="module" src="main.js"></script>
 </body>
 
 </html>

@@ -8,6 +8,11 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.container-fluid.no-gutter,
+.container.no-gutter {
+    --bs-gutter-x: 0;
+}
+
 body.dark-mode {
     background-color: #121212;
     color: #e0e0e0;
@@ -18,14 +23,24 @@ h2 {
     font-weight: 600;
 }
 
+.override-margin {
+    margin-left: 75% !important;
+}
+
+
 /* Navbar */
 .navbar-brand {
     font-weight: bold;
     font-size: 1.5rem;
 }
 
+.nav-item {
+    font-size: 1.5rem;
+    margin: 1%;
+}
+
 .navbar-logo {
-    height: 40px;
+    height: 4rem;
     width: auto;
 }
 
@@ -35,7 +50,13 @@ body.dark-mode .bg-dark {
 }
 
 .lead {
-    font-size: 195%;
+    font-size: 3rem;
+}
+
+.about {
+    font-size: 2rem;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 /* Theme Toggle Icon */
@@ -63,7 +84,7 @@ body.dark-mode .theme-toggle-icon {
     background: linear-gradient(to right, #00aeef, #0077c8);
     color: white;
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 5%;
     border-radius: 0;
 }
 
@@ -75,9 +96,7 @@ body.dark-mode .theme-toggle-icon {
 
 /* About Section */
 #about {
-    padding: 60px 20px;
     background-color: #f4f8fb;
-    border-radius: 10px;
     margin-bottom: 100px;
     transition: background-color 0.3s ease;
 }
@@ -150,4 +169,125 @@ body.dark-mode #txtMessage {
 .btn-primary:hover {
     background-color: #005fa3;
     border-color: #005fa3;
+}
+
+.services-heading {
+    color: #222;
+    font-size: 3rem;
+}
+
+/* Services Card Section */
+.card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #555;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    padding: 1rem;
+    background-color: #bbbbbb;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card-title {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #fdfdfd;
+}
+
+.card-text {
+    font-size: 1.5rem;
+    color: #fdfdfd;
+}
+
+.card a.btn {
+    margin-top: auto;
+    background-color: #0077c8;
+    border: none;
+}
+
+.card a.btn:hover {
+    background-color: #005fa3;
+}
+
+/* Dark Mode Styles for Services Section */
+body.dark-mode .card {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    border: none;
+}
+
+body.dark-mode .services-heading {
+    color: #2a2a2a;
+    font-size: 3rem;
+}
+
+body.dark-mode .card .card-title {
+    color: #ffffff;
+}
+
+body.dark-mode .card .card-text {
+    color: #cccccc;
+}
+
+body.dark-mode .card-img-top {
+    background-color: #2a2a2a;
+}
+
+body.dark-mode .btn-primary {
+    background-color: #007acc;
+    border-color: #007acc;
+}
+
+body.dark-mode .btn-primary:hover {
+    background-color: #005fa3;
+    border-color: #005fa3;
+}
+
+
+@media (max-width: 576px) {
+    .card-img-top {
+        height: 140px;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+    .card-text {
+        font-size: 0.9rem;
+    }
+
+    .navbar .navbar-nav.ms-auto {
+        margin-left: 0 !important;
+    }
+}
+
+.section-light {
+    background-color: #f4f8fb;
+}
+
+.section-white {
+    background-color: #ffffff;
+}
+
+.section-padding {
+    padding: 60px 20px;
+}
+
+.section-divider {
+    border-top: 1px solid #ddd;
 }
