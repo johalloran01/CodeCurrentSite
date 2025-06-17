@@ -1,4 +1,6 @@
-/* General Layout */
+/* ============================
+   BASE LAYOUT & TYPOGRAPHY
+============================ */
 body {
     font-family: 'Segoe UI', sans-serif;
     background-color: #f4f8fb;
@@ -8,27 +10,36 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.container-fluid.no-gutter,
-.container.no-gutter {
-    --bs-gutter-x: 0;
-}
-
-body.dark-mode {
-    background-color: #2a2a2a;
-    color: #e0e0e0;
-}
-
 h1,
 h2 {
     font-weight: 600;
+}
+
+.lead {
+    font-size: 3rem;
+}
+
+.about {
+    font-size: 2rem;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+/* ============================
+   GRID / CONTAINER MODIFIERS
+============================ */
+.container-fluid.no-gutter,
+.container.no-gutter {
+    --bs-gutter-x: 0;
 }
 
 .override-margin {
     margin-left: 75% !important;
 }
 
-
-/* Navbar */
+/* ============================
+   NAVBAR
+============================ */
 .navbar-brand {
     font-weight: bold;
     font-size: 1.5rem;
@@ -44,36 +55,35 @@ h2 {
     width: auto;
 }
 
-body.dark-mode .navbar,
-body.dark-mode .bg-dark {
-    background-color: #2a2a2a !important;
-}
-
-.lead {
-    font-size: 3rem;
-}
-
-.about {
-    font-size: 2rem;
-    margin-left: 10%;
-    margin-right: 10%;
-}
-
-/* Theme Toggle Icon */
 .theme-toggle-icon {
     width: 28px;
     height: 28px;
     cursor: pointer;
-    /*filter: invert(100%);*/
     transition: filter 0.3s ease;
-
 }
 
-body.dark-mode .theme-toggle-icon {
-    filter: invert(0%);
+/* ============================
+   SECTION WRAPPERS
+============================ */
+.section-light {
+    background-color: #f4f8fb;
 }
 
-/* Hero Section */
+.section-white {
+    background-color: #ffffff;
+}
+
+.section-padding {
+    padding: 60px 20px;
+}
+
+.section-divider {
+    border-top: 1px solid #ddd;
+}
+
+/* ============================
+   HERO SECTION
+============================ */
 #hero-container {
     padding: 0;
     margin-top: -1rem;
@@ -94,30 +104,24 @@ body.dark-mode .theme-toggle-icon {
     margin-bottom: 1rem;
 }
 
-/* About Section */
+/* ============================
+   ABOUT & CONTACT SECTIONS
+============================ */
 #about {
     background-color: #f4f8fb;
     margin-bottom: 100px;
     transition: background-color 0.3s ease;
 }
 
-body.dark-mode #about {
-    background-color: #2a2a2a;
-}
-
-/* Contact Section */
 #contact {
     padding: 60px 20px;
     background-color: #e6ecf2;
-    /* border-radius: 10px; */
     transition: background-color 0.3s ease;
 }
 
-body.dark-mode #contact {
-    background-color: #2a2a2a;
-}
-
-/* Form Elements */
+/* ============================
+   FORMS
+============================ */
 form .form-control {
     border-radius: 6px;
     box-shadow: none;
@@ -127,38 +131,18 @@ form .form-control {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-body.dark-mode form .form-control {
-    background-color: #333;
-    color: #fff;
-    border: 1px solid #555;
-}
-
-/* Footer */
-footer {}
-
-body.dark-mode footer {
-    background-color: #1f1f1f;
-    color: #ccc;
-}
-
-/* Buttons */
-.btn {
-    padding: 0.6rem 1.5rem;
-    border-radius: 4px;
-}
-
-/* Custom Identifiers */
 #txtName,
 #txtEmail,
 #txtMessage {
     background-color: #fff;
 }
 
-body.dark-mode #txtName,
-body.dark-mode #txtEmail,
-body.dark-mode #txtMessage {
-    background-color: #333;
-    color: #fff;
+/* ============================
+   BUTTONS
+============================ */
+.btn {
+    padding: 0.6rem 1.5rem;
+    border-radius: 4px;
 }
 
 .btn-primary {
@@ -171,12 +155,14 @@ body.dark-mode #txtMessage {
     border-color: #005fa3;
 }
 
+/* ============================
+   SERVICES SECTION (CARDS)
+============================ */
 .services-heading {
     color: #222;
     font-size: 3rem;
 }
 
-/* Services Card Section */
 .card {
     border: none;
     border-radius: 12px;
@@ -223,23 +209,65 @@ body.dark-mode #txtMessage {
     background-color: #005fa3;
 }
 
-/* Dark Mode Styles for Services Section */
+/* ============================
+   DARK MODE OVERRIDES
+============================ */
+body.dark-mode {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+}
+
+/* Navbar */
+body.dark-mode .navbar,
+body.dark-mode .bg-dark {
+    background-color: #2a2a2a !important;
+}
+
+body.dark-mode .theme-toggle-icon {
+    filter: invert(0%);
+}
+
+/* Sections */
+body.dark-mode #about,
+body.dark-mode #contact {
+    background-color: #2a2a2a;
+}
+
+/* Forms */
+body.dark-mode form .form-control {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+body.dark-mode #txtName,
+body.dark-mode #txtEmail,
+body.dark-mode #txtMessage {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Footer */
+body.dark-mode footer {
+    background-color: #1f1f1f;
+    color: #ccc;
+}
+
+/* Services Section */
 body.dark-mode .card {
     background-color: #1f1f1f;
     color: #e0e0e0;
-    border: none;
 }
 
 body.dark-mode .services-heading {
     color: #2a2a2a;
-    font-size: 3rem;
 }
 
-body.dark-mode .card .card-title {
+body.dark-mode .card-title {
     color: #ffffff;
 }
 
-body.dark-mode .card .card-text {
+body.dark-mode .card-text {
     color: #cccccc;
 }
 
@@ -257,10 +285,9 @@ body.dark-mode .btn-primary:hover {
     border-color: #005fa3;
 }
 
-body.dark-mode {
-    background: #2a2a2a;
-}
-
+/* ============================
+   MOBILE / RESPONSIVE
+============================ */
 @media (max-width: 576px) {
     .card-img-top {
         height: 140px;
@@ -277,20 +304,4 @@ body.dark-mode {
     .navbar .navbar-nav.ms-auto {
         margin-left: 0 !important;
     }
-}
-
-.section-light {
-    background-color: #f4f8fb;
-}
-
-.section-white {
-    background-color: #ffffff;
-}
-
-.section-padding {
-    padding: 60px 20px;
-}
-
-.section-divider {
-    border-top: 1px solid #ddd;
 }
