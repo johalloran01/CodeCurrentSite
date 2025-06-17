@@ -2,24 +2,37 @@ import { createCard } from './components/card.js';
 
 const services = [
   {
-    title: 'Web Development',
-    text: 'Responsive websites built with modern frameworks and clean code. Build something that looks good and represents you.',
+    title: 'Website & Web App Development',
+    text: 'Custom-built websites and applications using modern frameworks. Fast, responsive, and tailored to your goals.',
     imageUrl: 'media/code-svgrepo-com.svg',
     link: '#'
   },
   {
-    title: 'Brand Identity',
-    text: 'Logos, style guides, and cohesive visual identity for your brand. Whether you want to digitize, vectorize, or design something entirely new, we can get you where you need to be.',
+    title: 'UX/UI Design',
+    text: 'Intuitive interfaces and clean design that enhance user experience across all devices and platforms.',
+    imageUrl: 'media/design-svgrepo-com.svg',
+    link: '#'
+  },
+  {
+    title: 'Brand Identity & Creative',
+    text: 'From logos to style guides — establish or refresh your brand with clarity and purpose.',
     imageUrl: 'media/brand-svgrepo-com.svg',
     link: '#'
   },
   {
-    title: 'Technical Strategy',
-    text: 'Consultation for scalable architecture, APIs, and integrations. Minimize expenditures and reliance on third party tools, let us show you how we can maximize your team\'s efficiency and output.',
+    title: 'Technical Consulting',
+    text: 'Guidance on architecture, integrations, and automation. Build smarter, scale efficiently.',
     imageUrl: 'media/gear-svgrepo-com.svg',
+    link: '#'
+  },
+  {
+    title: 'Deployment & Hosting',
+    text: 'We handle the tech stack. Fast, secure, and reliable deployment with modern DevOps practices.',
+    imageUrl: 'media/cloud-svgrepo-com.svg',
     link: '#'
   }
 ];
+
 
 // Outer fluid wrapper to span the page background
 const sectionWrapper = document.createElement('div');
