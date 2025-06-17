@@ -202,13 +202,27 @@ form .form-control {
     font-size: 3rem;
 }
 
+.icon-img {
+    max-height: 50%;
+    max-width: 50%;
+    object-fit: contain;
+}
+
+.icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 .card {
     border: none;
     border-radius: 1rem;
     /* overflow: hidden; */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background: linear-gradient(to right, #0085b6, #0076A2);
-    padding: 2%;
+    padding: 1%;
+
     margin: 10%;
 }
 
