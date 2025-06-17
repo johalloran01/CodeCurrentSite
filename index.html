@@ -2,99 +2,153 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Current</title>
-    <link rel="icon" href="media/favicon.svg" type="image/svg+xml">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code Current</title>
+  <link rel="icon" href="media/favicon.svg" type="image/svg+xml" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <header class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="media/CodeCurrentC.svg" alt="Code Current Logo" class="navbar-logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto override-margin">
-                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                    <li class="nav-item">
-                        <img id="darkModeToggle" src="media/moon-svgrepo-com.svg" alt="Toggle Theme"
-                            class="theme-toggle-icon" />
-                    </li>
-                </ul>
+  <header class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="media/CodeCurrentC.svg" alt="Code Current Logo" class="navbar-logo" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto override-margin">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item">
+            <img id="darkModeToggle" src="media/moon-svgrepo-com.svg" alt="Toggle Theme" class="theme-toggle-icon" />
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main class="text">
+    <div class="container-fluid section-white no-gutter" id="hero-container">
+      <section id="hero" class="section-padding">
+        <p class="lead">
+          <b class="bold-lead">MODERN DEVELOPMENT</b><br />
+          IN A CONSTANT STATE OF FLOW.
+        </p>
+      </section>
+    </div>
+
+    <div class="container-fluid section-white no-gutter" id="about-container">
+      <div class="container">
+        <section id="about" class="section-padding">
+          <p class="about">
+            Code Current is a client focused studio embracing flow, function, and the future of technology.
+            We utilize our exceptional skill sets, that incorporate a wide variety of tools and resources to
+            architect the solution that's right for you.
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <!-- Services section dynamically injected via main.js -->
+
+    <div class="container-fluid section-white no-gutter" id="contact-container">
+      <div class="container">
+        <section id="contact" class="section-padding">
+          <h2>Contact Us</h2>
+          <form>
+            <div class="mb-3">
+              <label for="txtName" class="form-label">Name</label>
+              <input type="text" class="form-control" id="txtName" placeholder="Enter your name" />
             </div>
-        </div>
-    </header>
+            <div class="mb-3">
+              <label for="txtEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="txtEmail" placeholder="Enter your email" />
+            </div>
+            <div class="mb-3">
+              <label for="txtMessage" class="form-label">Message</label>
+              <textarea class="form-control" id="txtMessage" rows="4" placeholder="Your message..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-outline-light bg-dark">Submit</button>
+          </form>
+        </section>
+      </div>
+    </div>
+  </main>
 
-    <main class="text-center">
-        <div class="container-fluid section-white no-gutter" id="hero-container">
-            <section id="hero" class="section-padding">
-                <p class="lead">Modern development in a constant state of flow.</p>
-            </section>
-        </div>
+  <footer class="text-center py-3 bg-dark text-light">
+    <small>&copy; 2025 Code Current. All rights reserved.</small>
+  </footer>
 
-        <div class="container-fluid section-white no-gutter" id="about-container">
-            <section id="about" class="section-padding">
-                <p class="about">Code Current is a client focused studio embracing flow, function, and the future of
-                    technology.
-                    We utilize our exceptional skill sets, that encorporate a wide variety of tools and resources to
-                    architect the solution that's right for you.
-                </p>
-            </section>
-        </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-        <!-- Services section dynamically injected via main.js -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Dark Mode Toggle
+      const toggleBtn = document.getElementById('darkModeToggle');
 
-        <div class="container-fluid section-white no-gutter" id="contact-container">
-            <section id="contact" class="section-padding">
-                <h2>Contact Us</h2>
-                <form>
-                    <div class="mb-3">
-                        <label for="txtName" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="txtName" placeholder="Enter your name">
-                    </div>
-                    <div class="mb-3">
-                        <label for="txtEmail" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="txtEmail" placeholder="Enter your email">
-                    </div>
-                    <div class="mb-3">
-                        <label for="txtMessage" class="form-label">Message</label>
-                        <textarea class="form-control" id="txtMessage" rows="4"
-                            placeholder="Your message..."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-outline-light bg-dark">Submit</button>
-                </form>
-            </section>
-        </div>
-    </main>
+      function updateThemeIcon() {
+        const isDark = document.body.classList.contains('dark-mode');
+        toggleBtn.src = isDark ? 'media/sun-2-svgrepo-com.svg' : 'media/moon-svgrepo-com.svg';
+      }
 
-    <footer class="text-center py-3 bg-dark text-light">
-        <small>&copy; 2025 Code Current. All rights reserved.</small>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const toggleBtn = document.getElementById('darkModeToggle');
-
-        function updateThemeIcon() {
-            const isDark = document.body.classList.contains('dark-mode');
-            toggleBtn.src = isDark ? 'media/sun-2-svgrepo-com.svg' : 'media/moon-svgrepo-com.svg';
-        }
-        toggleBtn.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            updateThemeIcon();
-        });
-
+      toggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
         updateThemeIcon();
-    </script>
-    <script type="module" src="main.js"></script>
+      });
+
+      updateThemeIcon(); // Set initial icon based on current mode
+
+      // Shrinking Navbar on Scroll
+      const navbar = document.querySelector('.navbar');
+
+      function handleScroll() {
+        if (window.scrollY > 80) {
+          navbar.classList.add('shrink');
+        } else {
+          navbar.classList.remove('shrink');
+        }
+      }
+
+      window.addEventListener('scroll', handleScroll);
+
+      // Smooth Scroll for Anchor Links (with navbar offset)
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const targetId = this.getAttribute('href').slice(1);
+          const target = document.getElementById(targetId);
+          if (target) {
+            e.preventDefault();
+            const offset = navbar.offsetHeight + 16;
+            const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({ top, behavior: 'smooth' });
+          }
+        });
+      });
+
+      // Collapse Mobile Navbar on Nav Link Click
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          const navbarCollapse = document.querySelector('.navbar-collapse');
+          if (navbarCollapse.classList.contains('show')) {
+            const collapse = new bootstrap.Collapse(navbarCollapse, {
+              toggle: false
+            });
+            collapse.hide();
+          }
+        });
+      });
+    });
+  </script>
+
+  <!-- Dynamic Services Injection -->
+  <script type="module" src="main.js"></script>
+
 </body>
 
 </html>

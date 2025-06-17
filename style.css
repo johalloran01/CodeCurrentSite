@@ -17,6 +17,12 @@ h2 {
 
 .lead {
     font-size: 3rem;
+    text-align: left;
+    line-height: 1;
+}
+
+.bold-lead {
+    font-weight: bolder;
 }
 
 .about {
@@ -40,6 +46,18 @@ h2 {
 /* ============================
    NAVBAR
 ============================ */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    transition: padding 0.3s ease, background-color 0.3s ease;
+    padding: .25rem .10rem;
+}
+
+.navbar.shrink {
+    padding: 0.5rem 1rem;
+}
+
 .navbar-brand {
     font-weight: bold;
     font-size: 1.5rem;
@@ -51,8 +69,12 @@ h2 {
 }
 
 .navbar-logo {
-    height: 4rem;
-    width: auto;
+    height: 3.5rem;
+    transition: height 0.3s ease;
+}
+
+.navbar.shrink .navbar-logo {
+    height: 2.5rem;
 }
 
 .theme-toggle-icon {
@@ -91,7 +113,7 @@ h2 {
 
 #hero {
     padding: 60px 20px;
-    background: linear-gradient(to right, #00aeef, #0077c8);
+    background: linear-gradient(to right, #0082b1, #0076A2);
     color: white;
     text-align: center;
     margin-bottom: 5%;
@@ -113,10 +135,26 @@ h2 {
     transition: background-color 0.3s ease;
 }
 
+#about-container {
+    background-color: #f4f8fb;
+}
+
 #contact {
     padding: 60px 20px;
     background-color: #e6ecf2;
     transition: background-color 0.3s ease;
+}
+
+#contact-container {
+    background-color: #e6ecf2;
+}
+
+#services {
+    background-color: #e6ecf2;
+}
+
+#services-container {
+    background-color: #e6ecf2;
 }
 
 /* ============================
@@ -160,15 +198,18 @@ form .form-control {
 ============================ */
 .services-heading {
     color: #222;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 3rem;
 }
 
 .card {
     border: none;
-    border-radius: 12px;
-    overflow: hidden;
+    border-radius: 1rem;
+    /* overflow: hidden; */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: #555;
+    background: linear-gradient(to right, #0085b6, #0076A2);
+    padding: 2%;
+    margin: 10%;
 }
 
 .card:hover {
@@ -176,27 +217,21 @@ form .form-control {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
-.card-img-top {
-    width: 100%;
-    height: 180px;
-    object-fit: contain;
-    padding: 1rem;
-    background-color: #bbbbbb;
-}
-
 .card-body {
     text-align: center;
 }
 
 .card-title {
-    font-size: 3rem;
-    font-weight: 600;
+    font-size: 2rem;
+    font-weight: 300;
     color: #fdfdfd;
+    margin-bottom: 3rem;
 }
 
 .card-text {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: #fdfdfd;
+    flex-wrap: wrap;
 }
 
 .card a.btn {
@@ -229,7 +264,9 @@ body.dark-mode .theme-toggle-icon {
 
 /* Sections */
 body.dark-mode #about,
-body.dark-mode #contact {
+body.dark-mode #about-container,
+body.dark-mode #contact,
+body.dark-mode #contact-container {
     background-color: #2a2a2a;
 }
 
@@ -259,8 +296,13 @@ body.dark-mode .card {
     color: #e0e0e0;
 }
 
+body.dark-mode #services,
+body.dark-mode #services-container {
+    background-color: #1f1f1f;
+}
+
 body.dark-mode .services-heading {
-    color: #2a2a2a;
+    color: #fff;
 }
 
 body.dark-mode .card-title {
@@ -303,5 +345,9 @@ body.dark-mode .btn-primary:hover {
 
     .navbar .navbar-nav.ms-auto {
         margin-left: 0 !important;
+    }
+
+    .about {
+        font-size: 1.5rem;
     }
 }
