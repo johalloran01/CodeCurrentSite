@@ -62,18 +62,27 @@
         <section id="contact" class="section-padding">
           <h2>Contact Us</h2>
           <form>
+            <!-- Honeypot Field (Hidden from users) -->
+            <div style="display: none;">
+              <label for="website">Website</label>
+              <input type="text" id="website" name="website" autocomplete="off" tabindex="-1" />
+            </div>
+
             <div class="mb-3">
               <label for="txtName" class="form-label">Name</label>
               <input type="text" class="form-control" id="txtName" placeholder="Enter your name" />
             </div>
+
             <div class="mb-3">
               <label for="txtEmail" class="form-label">Email</label>
               <input type="email" class="form-control" id="txtEmail" placeholder="Enter your email" />
             </div>
+
             <div class="mb-3">
               <label for="txtMessage" class="form-label">Message</label>
               <textarea class="form-control" id="txtMessage" rows="4" placeholder="Your message..."></textarea>
             </div>
+
             <button type="submit" class="btn btn-outline-light bg-dark">Submit</button>
           </form>
         </section>
@@ -152,12 +161,17 @@
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const form = document.querySelector("#contact form");
+
       form.addEventListener("submit", async (e) => {
         e.preventDefault();
 
         const name = document.getElementById("txtName").value;
         const email = document.getElementById("txtEmail").value;
         const message = document.getElementById("txtMessage").value;
+        const honeypot = document.getElementById("website").value;
+
+        // If honeypot is filled out, silently reject the submission
+        if (honeypot) return;
 
         try {
           const response = await fetch("https://codecurrentsite.onrender.com/api/contact", {
@@ -179,6 +193,7 @@
       });
     });
   </script>
+
 
 
 </body>
