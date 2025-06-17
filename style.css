@@ -74,8 +74,11 @@ h2 {
     position: sticky;
     top: 0;
     z-index: 999;
-    transition: padding 0.3s ease, background-color 0.3s ease;
     padding: .25rem .10rem;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0));
+    transition: padding 0.3s ease, background 0.3s ease;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
 
 .navbar.shrink {
@@ -90,6 +93,12 @@ h2 {
 .nav-item {
     font-size: 1.5rem;
     margin: 1%;
+
+}
+
+.navbar .nav-link {
+    color: #2a2a2a;
+    transition: color 0.3s ease;
 }
 
 .navbar-logo {
@@ -132,7 +141,7 @@ h2 {
 ============================ */
 #hero-container {
     padding: 0;
-    margin-top: -1rem;
+    margin-top: 0rem;
 }
 
 #hero {
@@ -293,8 +302,15 @@ body.dark-mode {
 /* Navbar */
 body.dark-mode .navbar,
 body.dark-mode .bg-dark {
-    background-color: #2a2a2a !important;
+    background: linear-gradient(to right, rgba(20, 20, 20, 0.95), rgba(20, 20, 20, 0));
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
+
+body.dark-mode .navbar .nav-link {
+    color: #f4f8fb;
+}
+
 
 body.dark-mode .theme-toggle-icon {
     filter: invert(0%);
