@@ -262,13 +262,13 @@ form .form-control {
 .card-title {
     font-size: 2rem;
     font-weight: 300;
-    color: #fdfdfd;
+    color: #ffffff;
     margin-bottom: 3rem;
 }
 
 .card-text {
     font-size: 1.3rem;
-    color: #fdfdfd;
+    color: #ffffff;
     flex-wrap: wrap;
 }
 
