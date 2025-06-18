@@ -11,26 +11,28 @@
 </head>
 
 <body>
-  <header class="navbar navbar-expand-lg navbar-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="media/CodeCurrentC.svg" alt="Code Current Logo" class="navbar-logo" />
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto override-margin">
-          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-          <li class="nav-item">
-            <img id="darkModeToggle" src="media/moon-svgrepo-com.svg" alt="Toggle Theme" class="theme-toggle-icon" />
-          </li>
-        </ul>
+  <header class="sticky-top bg-transparent">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container"> <!-- NOT container-fluid -->
+        <a class="navbar-brand" href="#">
+          <img src="media/CodeCurrentC.svg" alt="Code Current Logo" class="navbar-logo" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            <li class="nav-item d-flex align-items-center">
+              <img id="darkModeToggle" src="media/moon-svgrepo-com.svg" alt="Toggle Theme" class="theme-toggle-icon" />
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
+    </nav>
   </header>
 
   <main class="text">
