@@ -123,6 +123,10 @@ h2 {
     transition: filter 0.3s ease;
 }
 
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%230076A2' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
 /* ============================
    SECTION WRAPPERS
 ============================ */
@@ -323,9 +327,8 @@ body.dark-mode .navbar .nav-link.active {
     /* subtle highlight in dark mode */
 }
 
-
-body.dark-mode .theme-toggle-icon {
-    filter: invert(0%);
+body.dark-mode .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23f4f8fb' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 /* Sections */
@@ -411,6 +414,21 @@ body.dark-mode .btn-primary:hover {
 
     .navbar .navbar-nav.ms-auto {
         margin-left: 0 !important;
+    }
+
+    .custom-navbar .d-flex {
+        flex-wrap: wrap;
+    }
+
+    .custom-navbar .navbar-toggler {
+        margin-left: auto;
+        /* Push toggler to the right */
+        margin-top: 0.5rem;
+    }
+
+    .custom-navbar .navbar-logo {
+        flex-shrink: 0;
+        /* Prevent logo from shrinking */
     }
 
     .about {

@@ -11,29 +11,40 @@
 </head>
 
 <body>
-  <header class="sticky-top bg-transparent">
-    <nav class="navbar navbar-expand-lg navbar-dark">
-      <div class="container"> <!-- NOT container-fluid -->
-        <a class="navbar-brand" href="#">
+  <header class="sticky-top custom-navbar">
+    <div class="container-fluid px-4">
+      <div class="d-flex align-items-center justify-content-between py-2">
+
+        <!-- Logo -->
+        <a href="#" class="d-flex align-items-center text-decoration-none">
           <img src="media/CodeCurrentC.svg" alt="Code Current Logo" class="navbar-logo" />
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+
+        <!-- Toggler (mobile only) -->
+        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarFlexMenu" aria-controls="navbarFlexMenu" aria-expanded="false"
+          aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-            <li class="nav-item d-flex align-items-center">
-              <img id="darkModeToggle" src="media/moon-svgrepo-com.svg" alt="Toggle Theme" class="theme-toggle-icon" />
-            </li>
-          </ul>
+
+        <!-- Collapsible Nav Menu -->
+        <div class="collapse navbar-collapse justify-content-end d-lg-flex" id="navbarFlexMenu">
+          <div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center gap-3 mt-3 mt-lg-0">
+
+            <a class="nav-link nav-custom-link" href="#">Home</a>
+            <a class="nav-link nav-custom-link" href="#about">About</a>
+            <a class="nav-link nav-custom-link" href="#services">Services</a>
+            <a class="nav-link nav-custom-link" href="#contact">Contact</a>
+
+            <img id="darkModeToggle" src="media/moon-svgrepo-com.svg" alt="Toggle Theme" class="theme-toggle-icon" />
+
+          </div>
         </div>
+
       </div>
-    </nav>
+    </div>
   </header>
+
 
   <main class="text">
     <div class="container-fluid section-white no-gutter" id="hero-container">
@@ -102,10 +113,13 @@
     document.addEventListener('DOMContentLoaded', () => {
       // Dark Mode Toggle
       const toggleBtn = document.getElementById('darkModeToggle');
+      const navbar = document.querySelector('.custom-navbar');
 
       function updateThemeIcon() {
         const isDark = document.body.classList.contains('dark-mode');
-        toggleBtn.src = isDark ? 'media/sun-2-svgrepo-com.svg' : 'media/moon-svgrepo-com.svg';
+        toggleBtn.src = isDark
+          ? 'media/sun-2-svgrepo-com.svg'
+          : 'media/moon-svgrepo-com.svg';
       }
 
       toggleBtn.addEventListener('click', () => {
@@ -113,27 +127,28 @@
         updateThemeIcon();
       });
 
-      updateThemeIcon(); // Set initial icon based on current mode
+      updateThemeIcon(); // Set initial icon
 
       // Shrinking Navbar on Scroll
-      const navbar = document.querySelector('.navbar');
-
-      function handleScroll() {
-        if (window.scrollY > 80) {
-          navbar.classList.add('shrink');
-        } else {
-          navbar.classList.remove('shrink');
+      if (navbar) {
+        function handleScroll() {
+          if (window.scrollY > 80) {
+            navbar.classList.add('shrink');
+          } else {
+            navbar.classList.remove('shrink');
+          }
         }
-      }
 
-      window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll);
+      }
 
       // Smooth Scroll for Anchor Links (with navbar offset)
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
           const targetId = this.getAttribute('href').slice(1);
           const target = document.getElementById(targetId);
-          if (target) {
+
+          if (target && navbar) {
             e.preventDefault();
             const offset = navbar.offsetHeight + 16;
             const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
@@ -146,10 +161,8 @@
       document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
           const navbarCollapse = document.querySelector('.navbar-collapse');
-          if (navbarCollapse.classList.contains('show')) {
-            const collapse = new bootstrap.Collapse(navbarCollapse, {
-              toggle: false
-            });
+          if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+            const collapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
             collapse.hide();
           }
         });
