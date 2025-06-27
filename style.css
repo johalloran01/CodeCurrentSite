@@ -396,7 +396,13 @@ body.dark-mode .btn-primary:hover {
 /* ============================
    MOBILE / RESPONSIVE
 ============================ */
-@media (max-width: 576px) {
+@media (max-width: 1000px) {
+
+    #services .col-md-4 {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+
     .card-img-top {
         height: 140px;
     }
