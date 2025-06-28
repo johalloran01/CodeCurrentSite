@@ -1,16 +1,15 @@
 import { rateLimit } from 'express-rate-limit'
+import express from 'express';
+import cors from 'cors';
+import bodyParser from 'body-parser';
+import axios from 'axios'
+import path from 'path';
+import 'dotenv/config';
 
 const limiter = rateLimit({
     windowMs: 1 * 60 * 1000, // 1 request per 1 minute
     limit: 1
 })
-const express = require('express');
-const cors = require('cors');
-const bodyParser = require('body-parser');
-const axios = require('axios');
-const path = require('path');
-require('dotenv').config();
-
 const app = express();
 const PORT = process.env.PORT || 4000;
 
@@ -21,7 +20,7 @@ app.use(bodyParser.json());
 // Serve static files (media, index.html, style.css, etc.)
 
 //potential
-app.use(express.static(path.join(__dirname, '../static/')));
+app.use(express.static(path.join(import.meta.dirname, '../static/')));
 
 // Contact form endpoint
 app.post('/api/contact', limiter, async (req, res) => {
@@ -66,7 +65,7 @@ app.post('/api/contact', limiter, async (req, res) => {
 
 
 // Fallback: always serve index.html for any GET route (for SPA or direct access)
-const indexPath = path.resolve(__dirname, '..', 'index.html');
+const indexPath = path.resolve(import.meta.dirname, '..', 'index.html');
 app.get(/^\/(?!api).*/, (req, res) => {
     res.sendFile(indexPath);
 });
