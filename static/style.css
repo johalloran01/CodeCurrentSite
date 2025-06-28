@@ -70,18 +70,18 @@ h2 {
 /* ============================
    NAVBAR
 ============================ */
-.navbar {
+.custom-navbar {
     position: sticky;
     top: 0;
     z-index: 999;
     padding: .25rem .10rem;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0));
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0)) !important;
     transition: padding 0.3s ease, background 0.3s ease;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
 }
 
-.navbar.shrink {
+.custom-navbar.shrink {
     padding: 0.5rem 1rem;
 }
 
@@ -96,13 +96,13 @@ h2 {
 
 }
 
-.navbar .nav-link {
+.custom-navbar .nav-link {
     color: #2a2a2a;
     transition: color 0.3s ease;
 }
 
-.navbar .nav-link:hover,
-.navbar .nav-link.active {
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active {
     color: #0076A2;
     /* or a color of your choosing */
 }
@@ -310,19 +310,24 @@ body.dark-mode {
 }
 
 /* Navbar */
-body.dark-mode .navbar,
+body.dark-mode .custom-navbar,
 body.dark-mode .bg-dark {
-    background: linear-gradient(to right, rgba(20, 20, 20, 0.95), rgba(20, 20, 20, 0));
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    padding: .25rem .10rem;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0)) !important;
+    transition: padding 0.3s ease, background 0.3s ease;
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
 }
 
-body.dark-mode .navbar .nav-link {
+body.dark-mode .custom-navbar .nav-link {
     color: #f4f8fb;
 }
 
-body.dark-mode .navbar .nav-link:hover,
-body.dark-mode .navbar .nav-link.active {
+body.dark-mode .custom-navbar .nav-link:hover,
+body.dark-mode .custom-navbar .nav-link.active {
     color: #0076A2;
     /* subtle highlight in dark mode */
 }
@@ -418,7 +423,7 @@ body.dark-mode .btn-primary:hover {
         font-size: 0.9rem;
     }
 
-    .navbar .navbar-nav.ms-auto {
+    .custom-navbar .navbar-nav.ms-auto {
         margin-left: 0 !important;
     }
 
@@ -430,6 +435,10 @@ body.dark-mode .btn-primary:hover {
         margin-left: auto;
         /* Push toggler to the right */
         margin-top: 0.5rem;
+    }
+
+    .custom-navbar .nav-link {
+        color: #f4f8fb;
     }
 
     .custom-navbar .navbar-logo {
