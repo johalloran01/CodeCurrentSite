@@ -1,3 +1,9 @@
+import { rateLimit } from 'express-rate-limit'
+
+const limiter = rateLimit({
+    windowMs: 1 * 60 * 1000, // 1 request per 1 minute
+    limit: 1
+})
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
@@ -13,10 +19,12 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Serve static files (media, index.html, style.css, etc.)
-app.use(express.static(path.join(__dirname, '..')));
+
+//potential
+app.use(express.static(path.join(__dirname, '../static/')));
 
 // Contact form endpoint
-app.post('/api/contact', async (req, res) => {
+app.post('/api/contact', limiter, async (req, res) => {
     const { name, email, message } = req.body;
 
     const data = {
@@ -62,8 +70,6 @@ const indexPath = path.resolve(__dirname, '..', 'index.html');
 app.get(/^\/(?!api).*/, (req, res) => {
     res.sendFile(indexPath);
 });
-
-
 
 // Start server
 app.listen(PORT, () => {

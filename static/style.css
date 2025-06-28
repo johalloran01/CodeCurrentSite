@@ -1,0 +1,443 @@
+/* ============================
+   BASE LAYOUT & TYPOGRAPHY
+============================ */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f8fb;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container,
+.container-fluid,
+section,
+.card,
+.card-body,
+.navbar,
+footer,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+#about,
+#about-container,
+#contact,
+#contact-container,
+#services,
+#services-container {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+h1,
+h2 {
+    font-weight: 600;
+}
+
+.lead {
+    font-size: 3rem;
+    text-align: left;
+    line-height: 1;
+}
+
+.bold-lead {
+    font-weight: bolder;
+}
+
+.about {
+    font-size: 1.5rem;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+/* ============================
+   GRID / CONTAINER MODIFIERS
+============================ */
+.container-fluid.no-gutter,
+.container.no-gutter {
+    --bs-gutter-x: 0;
+}
+
+.override-margin {
+    margin-left: 75% !important;
+}
+
+/* ============================
+   NAVBAR
+============================ */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    padding: .25rem .10rem;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0));
+    transition: padding 0.3s ease, background 0.3s ease;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.navbar.shrink {
+    padding: 0.5rem 1rem;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.nav-item {
+    font-size: 1.5rem;
+    margin: 1%;
+
+}
+
+.navbar .nav-link {
+    color: #2a2a2a;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: #0076A2;
+    /* or a color of your choosing */
+}
+
+.navbar-logo {
+    height: 3.5rem;
+    transition: height 0.3s ease;
+}
+
+.navbar.shrink .navbar-logo {
+    height: 2.5rem;
+}
+
+.theme-toggle-icon {
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    transition: filter 0.3s ease;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%230076A2' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* ============================
+   SECTION WRAPPERS
+============================ */
+.section-light {
+    background-color: #f4f8fb;
+}
+
+.section-white {
+    background-color: #ffffff;
+}
+
+.section-padding {
+    padding: 60px 20px;
+}
+
+.section-divider {
+    border-top: 1px solid #ddd;
+}
+
+/* ============================
+   HERO SECTION
+============================ */
+#hero-container {
+    padding: 0;
+    margin-top: 0rem;
+}
+
+#hero {
+    padding: 60px 20px;
+    background: linear-gradient(to right, #0082b1, #0076A2);
+    color: white;
+    text-align: center;
+    margin-bottom: 5%;
+    border-radius: 0;
+}
+
+#hero img {
+    max-width: 250px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+/* ============================
+   ABOUT & CONTACT SECTIONS
+============================ */
+#about {
+    background-color: #f4f8fb;
+    margin-bottom: 100px;
+    transition: background-color 0.3s ease;
+}
+
+#about-container {
+    background-color: #f4f8fb;
+}
+
+#contact {
+    padding: 60px 20px;
+    background-color: #e6ecf2;
+    transition: background-color 0.3s ease;
+}
+
+#contact-container {
+    background-color: #e6ecf2;
+}
+
+#services {
+    background-color: #e6ecf2;
+}
+
+#services-container {
+    background-color: #e6ecf2;
+}
+
+/* ============================
+   FORMS
+============================ */
+form .form-control {
+    border-radius: 6px;
+    box-shadow: none;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #1f1f1f;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#txtName,
+#txtEmail,
+#txtMessage {
+    background-color: #fff;
+}
+
+/* ============================
+   BUTTONS
+============================ */
+.btn {
+    padding: 0.6rem 1.5rem;
+    border-radius: 4px;
+}
+
+.btn-primary {
+    background-color: #0077c8;
+    border-color: #0077c8;
+}
+
+.btn-primary:hover {
+    background-color: #005fa3;
+    border-color: #005fa3;
+}
+
+/* ============================
+   SERVICES SECTION (CARDS)
+============================ */
+.services-heading {
+    color: #222;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 3rem;
+}
+
+.icon-img {
+    max-height: 50%;
+    max-width: 50%;
+    object-fit: contain;
+}
+
+.icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.card {
+    border: none;
+    border-radius: 1rem;
+    /* overflow: hidden; */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: linear-gradient(to right, #0085b6, #0076A2);
+    padding: 1%;
+
+    margin: 10%;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card-title {
+    font-size: 2rem;
+    font-weight: 300;
+    color: #ffffff;
+    margin-bottom: 3rem;
+}
+
+.card-text {
+    font-size: 1.3rem;
+    color: #ffffff;
+    flex-wrap: wrap;
+}
+
+.card a.btn {
+    margin-top: auto;
+    background-color: #0077c8;
+    border: none;
+}
+
+.card a.btn:hover {
+    background-color: #005fa3;
+}
+
+/* ============================
+   DARK MODE OVERRIDES
+============================ */
+body.dark-mode {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+}
+
+/* Navbar */
+body.dark-mode .navbar,
+body.dark-mode .bg-dark {
+    background: linear-gradient(to right, rgba(20, 20, 20, 0.95), rgba(20, 20, 20, 0));
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+body.dark-mode .navbar .nav-link {
+    color: #f4f8fb;
+}
+
+body.dark-mode .navbar .nav-link:hover,
+body.dark-mode .navbar .nav-link.active {
+    color: #0076A2;
+    /* subtle highlight in dark mode */
+}
+
+body.dark-mode .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23f4f8fb' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Sections */
+body.dark-mode #about,
+body.dark-mode #about-container,
+body.dark-mode #contact,
+body.dark-mode #contact-container {
+    background-color: #2a2a2a;
+}
+
+/* Forms */
+body.dark-mode form .form-control {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+body.dark-mode #txtName,
+body.dark-mode #txtEmail,
+body.dark-mode #txtMessage {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Footer */
+body.dark-mode footer {
+    background-color: #1f1f1f;
+    color: #ccc;
+}
+
+/* Services Section */
+body.dark-mode .card {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+}
+
+body.dark-mode #services,
+body.dark-mode #services-container {
+    background-color: #1f1f1f;
+}
+
+body.dark-mode .services-heading {
+    color: #fff;
+}
+
+body.dark-mode .card-title {
+    color: #ffffff;
+}
+
+body.dark-mode .card-text {
+    color: #cccccc;
+}
+
+body.dark-mode .card-img-top {
+    background-color: #2a2a2a;
+}
+
+body.dark-mode .btn-primary {
+    background-color: #007acc;
+    border-color: #007acc;
+}
+
+body.dark-mode .btn-primary:hover {
+    background-color: #005fa3;
+    border-color: #005fa3;
+}
+
+/* ============================
+   MOBILE / RESPONSIVE
+============================ */
+@media (max-width: 1000px) {
+
+    #services .col-md-4 {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+
+    .card-img-top {
+        height: 140px;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+    .card-text {
+        font-size: 0.9rem;
+    }
+
+    .navbar .navbar-nav.ms-auto {
+        margin-left: 0 !important;
+    }
+
+    .custom-navbar .d-flex {
+        flex-wrap: wrap;
+    }
+
+    .custom-navbar .navbar-toggler {
+        margin-left: auto;
+        /* Push toggler to the right */
+        margin-top: 0.5rem;
+    }
+
+    .custom-navbar .navbar-logo {
+        flex-shrink: 0;
+        /* Prevent logo from shrinking */
+    }
+
+    .about {
+        font-size: 1.5rem;
+    }
+}
